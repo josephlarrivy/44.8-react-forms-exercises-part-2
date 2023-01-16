@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 const TodoForm = ({addItem}) => {
 
-    const INITIAL_STATE = ' ';
+    const INITIAL_STATE = 'new todo';
 
     const [formData, setFormData] = useState(INITIAL_STATE);
 
@@ -25,6 +25,7 @@ const TodoForm = ({addItem}) => {
         <form onSubmit={handleSubmit}>
             <label htmlFor="item">Item: </label>
             <input
+                required
                 id="item"
                 type="text"
                 name="item"
@@ -32,7 +33,7 @@ const TodoForm = ({addItem}) => {
                 value={formData.item}
                 onChange={handleChange}
             />
-            <button>Add Item</button>
+            <button>Submit</button>
         </form>
     )
 }
